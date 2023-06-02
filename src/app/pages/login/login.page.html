@@ -1,0 +1,20 @@
+<ion-app>
+	
+	<!-- Passage des attributs de HomePage vers l'enfant HeaderComponent  -->
+	<app-header [title] = "title"></app-header>
+
+	<form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="formLogin ion-text-center">
+		<div>
+			<label>
+				<h1 class="font-weight-bold ">Saisissez votre <br> code événement</h1>
+			</label>
+			<ion-input name="input" type="text" color="dark" formControlName="sessionCodeValue"></ion-input>
+		</div>
+		<ion-button class="ion-padding" type="submit" [disabled]="!loginForm.valid" expand="block">
+			<ion-label>Se connecter</ion-label>
+		</ion-button>
+	</form>
+
+	<app-footer></app-footer>
+	
+</ion-app>

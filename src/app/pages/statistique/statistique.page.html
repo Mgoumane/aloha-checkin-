@@ -1,0 +1,20 @@
+<ion-app>
+
+	<app-header [title]="title" (startScanner)="goToScan()"> </app-header>
+
+	<div class="ion-text-center">
+		<p>Le nombre de scan : {{ nbScans }}</p>
+		<p>Le nombre de scan unique : {{ nbContacts }}</p>
+		<p>Le nombre de scan valide : {{ nbScansValides }} </p>
+		<hr>
+		<br>
+		<ion-button  (click)="deleteStorage()"> Vider le local storage</ion-button>
+		
+		<br>
+		<ion-button (click)="deleteFileSysteme()"> Supprimer fichier de sauvegarde</ion-button>
+		
+	</div>
+
+	<div></div>
+
+</ion-app>

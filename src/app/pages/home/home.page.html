@@ -1,0 +1,74 @@
+<ion-app>
+
+<!-- Passage des attributs de HomePage vers l'enfant HeaderComponent afin de rendre le contenu du menu dynamique -->
+<app-header 
+	[title]="title" 
+	(startScanner)="startScanner()">
+</app-header>
+
+<div class="ion-padding" [style.--background]="scanActive?'#00000000':'#EDEDED'">
+
+	<!-- Affichage par défault au chargement du composant -->
+	<div [hidden]="scanActive" class=" homePageContent defaultStyle" *ngIf="statutId === 2" (click)="startScanner()">
+		<h1 class="font-weight-bold ion-text-center " [ngStyle]="{'font-size':'32pt'}"> En attente <br> d'un scan
+		</h1>
+	</div>
+
+	<!-- Affichage après un scan valide -->
+	<div [hidden]="scanActive" class="homePageContent authorizedStyle" *ngIf="statutId === 1" (click)="startScanner()">
+		<ion-icon id="authorized-icon" name="checkmark-circle-sharp" class="ion-text-center"></ion-icon>
+		<p class="ion-text-center " [innerHTML]="serveurMessage"></p>
+	</div>
+
+	<!-- Affichage après un scan non valide -->
+	<div [hidden]="scanActive" class="homePageContent unauthorizedStyle" *ngIf="statutId < 1" (click)="startScanner()">
+		<ion-icon id="unauthorized-icon" name="close-circle-sharp" class="ion-text-center"></ion-icon>
+		<h1 class="font-weight-bold ion-text-center "> Accès refusé </h1>
+		<p class="ion-text-center " [innerHTML]="serveurMessage"></p>
+	</div>
+
+	<!-- Affichage Modal pour tester en version web -->
+	<ion-modal [isOpen]="isModalOpen">
+		<ng-template>
+			<ion-header>
+				<ion-toolbar>
+					<ion-title>Saisie manuelle</ion-title>
+					<ion-buttons slot="end">
+						<ion-button (click)="modalIsOpen(false)">Fermer</ion-button>
+					</ion-buttons>
+				</ion-toolbar>
+			</ion-header>
+			<ion-content class="ion-padding">
+
+				<form [formGroup]="formulaireDeSimulation" (ngSubmit)="simulateScan()">
+					<label>
+						<h1>Saisie manuelle</h1>
+					</label>
+					<ion-input name="input" type="text" color="dark" formControlName="codeSaisie"></ion-input>
+					<ion-button class="ion-padding" type="submit">
+						<ion-label>Envoyer</ion-label>
+					</ion-button>
+				</form>
+			</ion-content>
+		</ng-template>
+	</ion-modal>
+</div>
+
+<!-- Affichage du scan -->
+<div [hidden]="!scanActive" class="scan-box"> </div>
+
+<ion-footer>
+	<ion-button (click)="startScanner()" [hidden]="scanActive">
+		<ion-icon class="ion-padding-left" slot="start" name="qr-code-outline"></ion-icon>
+		<p class="ion-padding-horizontal">Scanner</p>
+		<ion-icon class="ion-padding-right" slot="end" name="qr-code-outline"></ion-icon>
+	</ion-button>
+
+	<ion-row [hidden]="!scanActive">
+		<ion-col>
+			<ion-button (click)="stopScanner()">Stopper le scan</ion-button>
+		</ion-col>
+	</ion-row>
+</ion-footer>
+
+</ion-app>

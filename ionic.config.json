@@ -1,0 +1,7 @@
+{
+  "name": "Aloha Checkin",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

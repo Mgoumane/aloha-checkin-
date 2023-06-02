@@ -1,0 +1,108 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+ion-input {
+    border-radius: 5px;
+    border: solid 1.5px #D3D3D3;
+    --background: var( --mediactive-color-background-input ) !important;
+}
+
+ion-input.has-focus {
+    border-color: var( --mediactive-color-orange ) !important;
+}
+
+ion-input.ion-touched.ion-invalid {
+    border-color:#ff0000 !important;  
+}
+
+ion-button {
+    --background: var( --mediactive-color-orange ) !important;
+}
+
+ion-footer {
+    display: flex;
+    justify-content: center;
+    padding: 10%;
+}
+
+hr {
+    border-bottom: 1px solid #ccc;
+    margin: 10px 0;
+    width: 100%;
+}
+
+.font-weight-bold{
+    font-weight: bold;
+}
+
+/** Modale Alert */
+.modale-alert-custom { }
+	.modale-alert-custom .alert-wrapper { border:3px solid #ccc; }
+		.modale-alert-custom .alert-wrapper .alert-head { background-color:#ccc; }
+			.modale-alert-custom .alert-wrapper .alert-head h2 { color:#000000; text-align:center; }
+
+		.modale-alert-custom .alert-wrapper .alert-message { padding:20px !important; }
+
+		.modale-alert-custom .alert-wrapper .alert-button-group { justify-content:center; }
+			.modale-alert-custom .alert-wrapper .alert-button-group .alert-button { background-color:#ccc; border-radius:30px; padding:10px 20px; }
+				.modale-alert-custom .alert-wrapper .alert-button-group .alert-button .alert-button-inner { color:#000000; font-weight:bold; }
+
+.modale-alert-erreur { }
+	.modale-alert-erreur .alert-wrapper { border-color:#c9242b; }
+		.modale-alert-erreur .alert-wrapper .alert-head { background-color:#c9242b; }
+			.modale-alert-erreur .alert-wrapper .alert-head h2 { color:#FFFFFF; }
+
+		.modale-alert-erreur .alert-wrapper .alert-button-group { }
+			.modale-alert-erreur .alert-wrapper .alert-button-group .alert-button { background-color:#c9242b; }
+				.modale-alert-erreur .alert-wrapper .alert-button-group .alert-button .alert-button-inner { color:#FFFFFF; }
+
+.modale-alert-info { }
+	.modale-alert-info .alert-wrapper { border-color:#0e65d0; }
+		.modale-alert-info .alert-wrapper .alert-head { background-color:#0e65d0; }
+			.modale-alert-info .alert-wrapper .alert-head h2 { color:#FFFFFF; }
+
+		.modale-alert-info .alert-wrapper .alert-button-group { }
+			.modale-alert-info .alert-wrapper .alert-button-group .alert-button { background-color:#0e65d0; }
+				.modale-alert-info .alert-wrapper .alert-button-group .alert-button .alert-button-inner { color:#FFFFFF; }
+
+.modale-alert-warning { }
+	.modale-alert-warning .alert-wrapper { border-color:#ec8600; }
+		.modale-alert-warning .alert-wrapper .alert-head { background-color:#ec8600; }
+			.modale-alert-warning .alert-wrapper .alert-head h2 { color:#FFFFFF; }
+
+		.modale-alert-warning .alert-wrapper .alert-button-group { }
+			.modale-alert-warning .alert-wrapper .alert-button-group .alert-button { background-color:#ec8600; }
+				.modale-alert-warning .alert-wrapper .alert-button-group .alert-button .alert-button-inner { color:#FFFFFF; }
+
+.modale-alert-success { }
+	.modale-alert-success .alert-wrapper { border-color:#117f5f; }
+		.modale-alert-success .alert-wrapper .alert-head { background-color:#117f5f; }
+			.modale-alert-success .alert-wrapper .alert-head h2 { color:#FFFFFF; }
+
+		.modale-alert-success .alert-wrapper .alert-button-group { }
+			.modale-alert-success .alert-wrapper .alert-button-group .alert-button { background-color:#117f5f; }
+				.modale-alert-success .alert-wrapper .alert-button-group .alert-button .alert-button-inner { color:#FFFFFF; }

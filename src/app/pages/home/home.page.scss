@@ -1,0 +1,56 @@
+.scan-box {
+	border: 2px solid #fff;
+	box-shadow: 0 0 0 100vmax rgb(0, 0, 0, 0.5);
+	content: "";
+	display: block;
+	left: 50%;
+	height: 300px;
+	position: absolute;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: 300px;
+}
+
+.homePageContent{
+	display: block;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+	padding-top: 20%;
+	font-weight: bold;
+}
+.defaultStyle {
+    height: 300px;
+    width: 300px;
+	color: #999899 ;
+}
+.authorizedStyle {
+    height: 50%;
+    width: 90%;
+	background-color: green;
+	border-radius: 10px;
+	color: white;
+}
+.unauthorizedStyle {
+    height: 50%;
+    width: 90%;
+	background-color: rgba(255,172,154,255);
+	border-radius: 10px;
+	color: red;
+}
+
+#authorized-icon{
+	font-size: 128px;
+	display: block;
+	margin-left: auto;
+    margin-right: auto;
+}
+
+#unauthorized-icon{
+	color: red;
+	font-size: 128px;
+	display: block;
+	margin-left: auto;
+    margin-right: auto;
+}

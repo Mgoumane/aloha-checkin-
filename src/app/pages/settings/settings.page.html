@@ -1,0 +1,24 @@
+<ion-app>
+	<app-header 
+		[title]="title"
+		(startScanner)="goToScan()">
+	</app-header>
+
+	<div class="ion-text-center">
+		<form [formGroup]="lieuForm" (ngSubmit)="onSubmit()" class="ion-text-center"  [ngStyle]="{'padding':'20%'}">
+			<div>
+				<label>
+					<h1 class="font-weight-bold ">Entrez le lieu</h1>
+				</label>
+				<ion-input name="input" type="text" color="dark" formControlName="inputValue" ></ion-input>
+			</div>
+			<ion-button class="ion-padding" type="submit"  expand="block">
+				<ion-label>Envoyer</ion-label>
+			</ion-button>
+		</form>
+
+	</div>
+	
+	<div></div>
+
+</ion-app>

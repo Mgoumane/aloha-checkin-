@@ -1,0 +1,65 @@
+<ion-menu contentId="main-content">
+	<ion-header>
+		<ion-toolbar>
+			<ion-title>Aloha Checkin</ion-title>
+		</ion-toolbar>
+	</ion-header>
+	<ion-content>
+		<ion-list>
+			<ion-item>
+				<ion-icon name="home-outline" class="ion-padding"></ion-icon>
+				<ion-label><a (click)="goToHomePage()">Home</a></ion-label>
+			</ion-item>
+			<ion-item>
+				<ion-icon name="scan-outline" class="ion-padding"></ion-icon>
+				<ion-label><a (click)="startScanner()">Scan</a></ion-label>
+			</ion-item>
+			<ion-item>
+				<ion-icon name="information-circle-outline" class="ion-padding"></ion-icon>
+				<ion-label><a (click)="goToInfoPage()">Informations</a></ion-label>
+			</ion-item>
+			<ion-item>
+				<ion-icon name="settings-outline" class="ion-padding"></ion-icon>
+				<ion-label><a (click)="goToSettingsPage()">Settings</a></ion-label>
+			</ion-item>
+			<ion-item>
+				<ion-icon name="stats-chart-outline" class="ion-padding"></ion-icon>
+				<ion-label><a (click)="goToStatistiquePage()">Statistiques</a></ion-label>
+			</ion-item>
+			<ion-item>
+				<ion-icon name="log-out-outline" class="ion-padding"></ion-icon>
+				<ion-label><a (click)="logOut()">Déconnexion</a></ion-label>
+			</ion-item>
+		</ion-list>
+	</ion-content>
+</ion-menu>
+
+<div class="ion-page" id="main-content">
+	<ion-header>
+		<ion-toolbar>
+			<ion-buttons id="menu-btn"  *ngIf="isValide === 1">
+				<ion-menu-button></ion-menu-button>
+			</ion-buttons>
+			<ion-title id="page-title" class="ion-text-center">Aloha Checkin</ion-title>
+		</ion-toolbar>
+		<ion-toolbar class="ion-padding-horizontal">
+			<div class="justify-content">
+				<p >{{ title }}</p>
+
+				<!-- Div contenant les icones  -->
+					<div *ngIf="isValide === 1">
+						<div class="justify-content">
+							<ion-icon  name="wifi-sharp" ></ion-icon>
+							<div  class="justify-content">
+								<ion-icon  name="battery-{{batteryIconName}}-sharp" [ngStyle]="{'color': batteryIconColor}"></ion-icon> 
+								<p [ngStyle]="{'margin-top': '16px'}" >{{batteryLevel}}%</p>
+							</div>
+						</div>
+					</div>
+
+			</div>
+		</ion-toolbar>
+	</ion-header>
+</div>
+
+
